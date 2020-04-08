@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee        http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
+    <display-name>Servlet Application Login Example</display-name>
+    <servlet>
+		<servlet-name>LoginController</servlet-name>
+		<servlet-class>com.nilesh.servlet.LoginController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LoginController</servlet-name>
+		<url-pattern>/Login</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>Logout</servlet-name>
+		<servlet-class>com.nilesh.servlet.LogoutController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Logout</servlet-name>
+		<url-pattern>/Logout</url-pattern>
+	</servlet-mapping>
+
+	<filter>
+		<filter-name>sessioncheck</filter-name>
+		<filter-class>com.nilesh.servlet.RestJSessionFilter</filter-class>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>sessioncheck</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+</web-app>
